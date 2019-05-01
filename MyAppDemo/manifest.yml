@@ -1,0 +1,15 @@
+ID: KnowledgeSharing
+_schema-version: '3.1'
+applications:
+- name: MyAppDbLoc
+  path: MyAppDbLoc
+  memory: 265M
+  no-route: true
+  services:
+    - hdi_MyApp_Local
+- name: MyAppJsLoc
+  port: 64022
+  path: MyAppJsLoc
+  memory: 128M
+  services:
+    - hdi_MyApp_Local
