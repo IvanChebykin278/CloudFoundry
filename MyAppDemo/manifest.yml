@@ -13,3 +13,16 @@ applications:
   memory: 128M
   services:
     - hdi_MyApp_Local
+- name: MyAppUiLoc
+  port: 64021
+  memory: 100M
+  path: MyAppUiLoc
+  env:
+    destinations: > 
+        [
+            {
+                "name":"MyAppJsLoc",
+                "url":"https://myappjsloc.cfapps.eu10.hana.ondemand.com",
+                "forwardAuthToken": true
+            }
+        ]

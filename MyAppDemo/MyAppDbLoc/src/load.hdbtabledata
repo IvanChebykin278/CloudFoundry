@@ -1,10 +1,10 @@
 {
 	"format_version": 1,
 	"imports": [{
-		"target_table": "MyAppDemo.MyAppDb::myapp.studentTable",
+		"target_table": "MyAppDemo.MyAppDbLoc::myapp.studentTable",
 		"source_data": {
 			"data_type": "CSV",
-			"file_name": "MyAppDemo.MyAppDb::data.csv",
+			"file_name": "MyAppDemo.MyAppDbLoc::data.csv",
 			"has_header": false,
 			"dialect": "HANA",
 			"type_config": {

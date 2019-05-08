@@ -1,0 +1,3 @@
+service namespace "MyAppDemo.MyAppDbLoc" {
+    "MyAppDemo.MyAppDbLoc::myapp.studentView" as "MyAppData" keys generate local "GenID";
+}

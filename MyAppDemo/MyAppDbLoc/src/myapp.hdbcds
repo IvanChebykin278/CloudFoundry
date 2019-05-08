@@ -1,4 +1,4 @@
-namespace MyAppDemo.MyAppDb;
+namespace MyAppDemo.MyAppDbLoc;
 
 context myapp {
 	entity studentTable {

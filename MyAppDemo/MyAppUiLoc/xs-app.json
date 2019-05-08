@@ -1,0 +1,14 @@
+{
+    "welcomeFile": "webapp/index.html",
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "source": "(.*)(.xsjs)",
+            "destination": "MyAppJsLoc"
+        },
+        {
+            "source": "(.*)(.xsodata)",
+            "destination": "MyAppJsLoc"
+        }
+    ]
+}
