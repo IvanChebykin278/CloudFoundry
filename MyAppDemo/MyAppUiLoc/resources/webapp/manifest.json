@@ -1,0 +1,138 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "MyAppDemo.MyAppUiLoc",
+        "type": "application",
+        "i18n": "i18n/i18.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+        },
+        "sourceTemplate": {
+            "id": "hanatemplates.basicSAPUI5ApplicationProject",
+            "version": "0.0.0"
+        },
+		"dataSources": {
+			"demandService": {
+				"uri": "/xsodata/data.xsodata",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"demandPyService": {
+				"uri": "/pyData",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "MyAppDemo.MyAppUiLoc.view.Main",
+            "type": "XML",
+            "async": true,
+			"id": "app"
+		},
+		"handleValidation": true,
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.34",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.34.0"
+				},
+				"sap.m": {
+					"minVersion": "1.34.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.34.0"
+                },
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {},
+                "sap.viz": {},
+                "sap.suite.ui.commons": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "MyAppDemo.MyAppUiLoc.i18n.i18n"
+				}
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "demandService",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
+						},
+						"pyData": {
+								"type": "sap.ui.model.json.JSONModel",
+                "dataSource": "demandPyService"
+						}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+		  "config": {
+			"routerClass": "sap.m.routing.Router",
+			"viewType": "XML",
+			"viewPath": "MyAppDemo.MyAppUiLoc.view",
+			"controlId": "idAppControl",
+			"controlAggregation": "pages",
+			"async": true
+		  },
+		  "routes": [
+			{
+			  "pattern": "MainView",
+			  "name": "MainView",
+			  "target": [
+                  "TargetView1"
+              ]
+			}
+		  ],
+		  "targets": {
+			"TargetView1": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+			    			"viewName": "Main"
+				}
+		  }
+		}
+	}
+}

@@ -24,5 +24,16 @@ applications:
                 "name":"MyAppJsLoc",
                 "url":"https://myappjsloc.cfapps.eu10.hana.ondemand.com",
                 "forwardAuthToken": true
+            },
+            {
+                "name":"MyAppPyLoc",
+                "url":"https://myapppyloc.cfapps.eu10.hana.ondemand.com",
+                "forwardAuthToken": true
             }
         ]
+- name: MyAppPyLoc
+  port: 64023
+  path: MyAppPyLoc
+  memory: 128M
+  buildpack: python_buildpack
+  command: python run.py

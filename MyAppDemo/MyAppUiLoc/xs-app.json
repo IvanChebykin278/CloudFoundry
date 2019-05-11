@@ -9,6 +9,10 @@
         {
             "source": "(.*)(.xsodata)",
             "destination": "MyAppJsLoc"
+        },
+        {
+            "source": "/pyData(.*)",
+            "destination": "MyAppPyLoc"
         }
     ]
 }

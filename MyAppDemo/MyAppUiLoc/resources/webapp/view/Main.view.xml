@@ -1,0 +1,95 @@
+<mvc:View 
+    controllerName="MyAppDemo.MyAppUiLoc.controller.Main" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:sf="sap.f"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
+    <App id="idAppControl">
+        <pages>
+            <sf:DynamicPage id="dynamicPage">
+                <sf:content>
+                    <VBox>
+                        <Panel expandable="true" expanded="true" headerText="Data from xsodata" width="auto">
+                            <content>
+                                <Table id="idStudentsTable"
+                                        items="{
+                                            path: '/MyAppData',
+                                            sorter: {
+                                                path: 'name'
+                                            }
+                                        }">
+                                    <columns>
+                                        <Column>
+                                            <Text text="name" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="groups" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="faculty" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="specialty" />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{name}" />
+                                                <Text text="{groups}" />
+                                                <Text text="{faculty}" />
+                                                <Text text="{specialty}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </content>
+                        </Panel>
+                        <Panel expandable="true" expanded="true" headerText="Data from Python">
+                            <content>
+                                <Table id="idPyTable"
+                                        items="{
+                                            path: '/d/results',
+                                            sorter: {
+                                                path: 'groups'
+                                            }
+                                        }">
+                                    <columns>
+                                        <Column>
+                                            <Text text="name" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="groups" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="faculty" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="specialty" />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text text="{name}" />
+                                                <Text text="{groups}" />
+                                                <Text text="{faculty}" />
+                                                <Text text="{specialty}" />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </content>
+                        </Panel>
+                    </VBox>
+                </sf:content>
+            </sf:DynamicPage>
+        </pages>
+    </App>
+</mvc:View>

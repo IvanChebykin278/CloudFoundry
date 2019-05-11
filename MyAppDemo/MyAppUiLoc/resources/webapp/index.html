@@ -16,19 +16,20 @@
 			data-sap-ui-resourceroots='{"MyAppDemo.MyAppUiLoc": "./"}'>
 		</script>
 
-		<!--<script>
+		<script>
 			sap.ui.getCore().attachInit(function () {
-				new sap.ui.core.ComponentContainer({
-					name : "opensap.myapp"
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						name : "MyAppDemo.MyAppUiLoc"
+					})
 				}).placeAt("content");
 			});
-		</script>-->
+		</script>
 
 		
 	</head>
 	
 	<body class="sapUiBody" id="content">
-        Hello UI World!
 	</body>
 	
 </html>
